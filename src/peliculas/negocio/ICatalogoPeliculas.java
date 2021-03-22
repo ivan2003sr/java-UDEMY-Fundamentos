@@ -7,7 +7,7 @@ public interface ICatalogoPeliculas {
 
 	void listarPeliculas();
 
-	void buscarPelicula();
+	void buscarPelicula(String buscar);
 
 	void iniciarCatalogoPelicula();
 

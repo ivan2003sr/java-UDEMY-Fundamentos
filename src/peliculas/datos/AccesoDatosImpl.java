@@ -15,9 +15,9 @@ import peliculas.excepciones.AccesoDatosEx;
 import peliculas.excepciones.EscrituraDatosEx;
 import peliculas.excepciones.LecturaDatosEx;
 
-public class CatalogoPeliculas implements IAccesoDatos {
+public class AccesoDatosImpl implements IAccesoDatos {
 
-	public CatalogoPeliculas() {
+	public AccesoDatosImpl() {
 
 	}
 
@@ -79,6 +79,7 @@ public class CatalogoPeliculas implements IAccesoDatos {
 	public String buscar(String nombreRecurso, String buscar) throws LecturaDatosEx {
 
 		var archivo = new File(nombreRecurso);
+		@SuppressWarnings("unused")
 		String resultado = null;
 		try {
 			var entrada = new BufferedReader(new FileReader(archivo));
