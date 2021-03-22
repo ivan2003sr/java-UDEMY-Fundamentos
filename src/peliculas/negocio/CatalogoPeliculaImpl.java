@@ -51,6 +51,7 @@ public class CatalogoPeliculaImpl implements ICatalogoPeliculas {
 			System.out.println("Error de acceso a datos");
 			e.printStackTrace(System.out);
 		}
+		System.out.println("Resultado: "+resultado);
 
 	}
 

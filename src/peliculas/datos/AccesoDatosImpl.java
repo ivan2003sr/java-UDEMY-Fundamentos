@@ -22,7 +22,7 @@ public class AccesoDatosImpl implements IAccesoDatos {
 	}
 
 	@Override
-	public boolean existe(String nombreRecurso) throws AccesoDatosEx {
+	public boolean existe(String nombreRecurso) {
 
 		File archivo = new File(nombreRecurso);
 
@@ -42,6 +42,7 @@ public class AccesoDatosImpl implements IAccesoDatos {
 			while (linea != null) {
 				Pelicula pelicula = new Pelicula(linea);
 				peliculas.add(pelicula);
+				linea=entrada.readLine();
 			}
 			entrada.close();
 
@@ -79,7 +80,7 @@ public class AccesoDatosImpl implements IAccesoDatos {
 	public String buscar(String nombreRecurso, String buscar) throws LecturaDatosEx {
 
 		var archivo = new File(nombreRecurso);
-		@SuppressWarnings("unused")
+		
 		String resultado = null;
 		try {
 			var entrada = new BufferedReader(new FileReader(archivo));
@@ -107,7 +108,7 @@ public class AccesoDatosImpl implements IAccesoDatos {
 			throw new LecturaDatosEx("Excepción al buscar películas: " + e.getMessage());
 		}
 
-		return null;
+		return resultado;
 	}
 
 	@Override
